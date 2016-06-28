@@ -20,7 +20,6 @@ class Api
             setTimeout(() => {
                 todo.id = todos.length + 1;
                 todos.push(todo);
-                console.log(todos);
                 resolve(Object.assign({}, todo));
             }, 1000);
         });

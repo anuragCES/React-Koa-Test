@@ -7,7 +7,7 @@ function todos(state = initialState.todos, action = []) {
             return action.todos;
 
         case "ADD_TODO_SUCCESS":
-            return [...state, Object({}, action.todo)];
+            return [...state, Object.assign({}, action.todo)];
     
         default:
             return state;

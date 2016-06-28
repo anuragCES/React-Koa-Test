@@ -5,7 +5,6 @@ import api from './../api/index';
 // Our worker Saga: will perform the async task
 export function* loadTodos() {  
   const todos = yield call(api.getAllTodos);
-  console.log(todos);
   yield put({type: "LOAD_TODOS", todos});
 }
 
@@ -15,7 +14,6 @@ export function* watchLoadTodos() {
 }
 
 export function* addTodo(action) {  
-    console.log(action.todo);
   const todo = yield call(api.addTodo, action.todo);
   yield put({type: "ADD_TODO_SUCCESS", todo});
 }
