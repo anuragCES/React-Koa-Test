@@ -3,6 +3,7 @@ import React from 'react';
 import App from './components/App';  
 import configureStore from './stores/configureStore';
 import {Provider} from 'react-redux';
+import 'material-design-icons';
 
 main();
 function main() { 

@@ -1,9 +1,11 @@
 import React from 'react';  
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';
+import Card from './CardDraggable';
+import Menu from './../FileExplorer/Menu';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as todoActions from './../../actions/todoActions'
+import * as todoActions from './../../actions/todoActions';
 
 class Todo extends React.Component {  
 
@@ -34,13 +36,7 @@ class Todo extends React.Component {
     render() {    
         return (
             <div>
-                <h2>Todos</h2>
-                <AddTodo 
-                    todo={this.state.todo} 
-                    addTodo = {this.addTodoItem}
-                    onChange={this.updateFieldValues}
-                />
-                <TodoList todos={this.props.todos}/>
+                <Menu />
             </div>    
         );   
     }
@@ -62,3 +58,12 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStatetoProps, mapDispatchToProps)(Todo);
+
+// <h2>Todos</h2>
+//                 <AddTodo 
+//                     todo={this.state.todo} 
+//                     addTodo = {this.addTodoItem}
+//                     onChange={this.updateFieldValues}
+//                 />
+//                 <TodoList todos={this.props.todos}/>
+//                 <Card text='Test'/>
